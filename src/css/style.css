@@ -1,23 +1,76 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "colors.css";
+@import "fonts.css";
+
+
 
 h1{
-    @apply text-5xl;
+    @apply text-5xl font-title;
+    /* font-family: 'Catamaran', sans-serif; */
+    /* font-family: 'Coustard', serif; */
+    /* font-family: 'IBM Plex Sans Thai Looped', sans-serif; */
+    /* font-family: 'Palanquin', sans-serif; */
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font-family: 'Rowdies', cursive; */
+    /* font-family: 'Rubik Mono One', sans-serif; */
 }
 
-h2{}
 
-h3{}
+h2, h4{
+    @apply font-body font-bold;
+}
 
-a{}
+h2{
+    @apply text-3xl mb-8;
+}
 
-p{}
+h3 {
+    @apply text-2xl font-title;
+}
+
+h4{
+    @apply text-xl;
+}
+
+a, p, button, input {
+    @apply font-body;
+} 
 
 input{}
 
-button{}
+button{
+    @apply bg-transparent border-solid border border-2 relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:hover,
+.button:active {
+    @apply outline-none;
+}
+
+.button:hover {
+    @apply cursor-pointer;
+}
+
+.button:before {
+  content: "";
+  background-color: #D5EDF6;
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.button:hover:before {
+  background-color: #6DCFF6;
+}
 
 a{
     @apply relative;
@@ -34,16 +87,22 @@ a:hover:after{
 
 #portrait{}
 #portrait:hover{}
+
 .onglet{
-    @apply p-6 md:px-6 py-8 border-2 border-solid border-black border-b-transparent;
+    @apply p-6 md:px-6 py-8 border-2 border-solid border-black border-b-0;
+    height: 20%;
 }
-.onglet:hover{}
+
+.onglet:hover{
+    @apply bg-pink-500;
+}
 .onglet-content{
     @apply p-4 md:pl-24 md:py-20;
 }
 .card{
     @apply w-full h-screen md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black;
 }
+
 .card:hover{}
 
 .job-link a:not(last-child):after{

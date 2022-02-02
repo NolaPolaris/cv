@@ -29,7 +29,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      inject: false, // if we inject, tailwind purge before injection and remove all its css classes :( need to hardcode it in HTML for now.
     })
   ],  
   devServer: {

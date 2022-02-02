@@ -1,5 +1,53 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "colors.css";
 
-@import "colors.css"
+h1{
+    @apply text-5xl;
+}
+
+h2{}
+
+h3{}
+
+a{}
+
+p{}
+
+input{}
+
+button{}
+
+a{
+    @apply relative;
+}
+
+a:after{
+    content:"";
+    @apply absolute left-0 opacity-0 w-0; 
+}
+
+a:hover:after{
+
+}
+
+#portrait{}
+#portrait:hover{}
+.onglet{
+    @apply p-6 md:px-6 py-8 border-2 border-solid border-black border-b-transparent;
+}
+.onglet:hover{}
+.onglet-content{
+    @apply p-4 md:pl-24 md:py-20;
+}
+.card{
+    @apply w-full h-screen md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black;
+}
+.card:hover{}
+
+.job-link a:not(last-child):after{
+    content:" - ";
+    @apply absolute right-0 text-center mx-4 text-sm;
+}
+

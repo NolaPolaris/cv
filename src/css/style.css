@@ -4,6 +4,13 @@
 @import "fonts.css";
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+header{
+    background:linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAACFJREFUKFNjzL7w/z8DEYARpHCqASMjIbWjCvGGENHBAwCKoidEYok1UwAAAABJRU5ErkJggg==) repeat;
+}
 
 h1{
     @apply text-5xl font-title;
@@ -39,7 +46,7 @@ a, p, button, input {
 
 input{}
 
-button{
+button, .btn{
     @apply bg-transparent border-solid border border-2 relative;
     text-decoration: none;
     user-select: none;
@@ -48,15 +55,18 @@ button{
 }
 
 .button:hover,
-.button:active {
+.button:active,
+.btn:hover {
     @apply outline-none;
 }
 
-.button:hover {
+.button:hover,
+.btn:hover {
     @apply cursor-pointer;
 }
 
-.button:before {
+.button:before,
+.btn:before {
   content: "";
   background-color: #D5EDF6;
   height: calc(100% + 3px);
@@ -76,32 +86,48 @@ a{
     @apply relative;
 }
 
-a:after{
-    content:"";
-    @apply absolute left-0 opacity-0 w-0; 
-}
-
-a:hover:after{
-
-}
-
 #portrait{}
 #portrait:hover{}
 
 #intro {
-    background:url(../img/blob-blue.svg) center no-repeat;
+    @apply relative;
+    background: #d5edf65e;
+    backdrop-filter: blur(15px)
 }
 
 
-#intro a.btn{
-    @apply border border-2 border-black  px-4 py-3;
-    background:url(../img/anon_3.jpg) center no-repeat;
+#intro a {
+    @apply border border-2 border-black px-4 py-3 absolute right-8 bg-white font-bold;
+    box-shadow: 5px 5px 0 black;
 }
+
+#intro a:hover{
+    box-shadow: 7px 7px 0 #217aff;
+    transition: 0.3s;
+}
+
+#intro a:focus{
+    box-shadow: 2px 2px 0 #0044aa;
+    transition: 0.1s;
+}
+
+
 
 .onglet{
-    @apply p-6 md:px-6 py-8 border-2 border-solid border-black border-b-0;
+    @apply p-6 md:px-6 py-8 border-2 border-solid border-black border-b-0 relative;
     height: 20%;
+    background: #daeffd;
 }
+
+/* .onglet:before{
+    content: "";
+    @apply w-12 h-full bg-blue-500 absolute top-0 left-0;
+}
+.onglet:after{
+    content:attr(data-date);
+    @apply transform rotate-90 left-0 top-0 absolute z-10 flex justify-center items-center;
+} */
+
 
 .onglet:hover{
     @apply bg-pink-500;
@@ -114,6 +140,32 @@ a:hover:after{
 }
 
 .card:hover{}
+
+.job-extract{
+    @apply my-8;
+}
+
+.job-tech p {
+   @apply relative;
+}
+
+.job-tech p:before{
+    content: "";
+    @apply w-0 h-full absolute left-0 top-0;
+    z-index: -1;
+}
+
+.job-tech p:hover:before{
+    content: "";
+    @apply w-full;
+    background: #f1ff7f;
+    transition: ease-out 0.15s;
+}
+
+.job-link a,
+.job-tech p{
+    @apply relative mr-8 text-right;
+}
 
 .job-link a:not(last-child):after{
     content:" - ";

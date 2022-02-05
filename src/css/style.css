@@ -88,6 +88,11 @@ a:hover:after{
 #portrait{}
 #portrait:hover{}
 
+#intro {
+    background:url(../img/blob-blue.svg) center no-repeat;
+}
+
+
 #intro a.btn{
     @apply border border-2 border-black  px-4 py-3;
     background:url(../img/anon_3.jpg) center no-repeat;

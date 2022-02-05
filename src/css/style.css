@@ -88,6 +88,11 @@ a:hover:after{
 #portrait{}
 #portrait:hover{}
 
+#intro a.btn{
+    @apply border border-2 border-black  px-4 py-3;
+    background:url(../img/anon_3.jpg) center no-repeat;
+}
+
 .onglet{
     @apply p-6 md:px-6 py-8 border-2 border-solid border-black border-b-0;
     height: 20%;

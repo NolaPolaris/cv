@@ -20,14 +20,32 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
+        test: /\.(sass|less|css)$/,
         include: path.resolve(__dirname, 'src'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.svg$/,
         loader: 'svg-inline-loader'
-    }
+      },
+      // {
+      //   test: /\.(png|svg|jpe?g|gif)$/,
+      //   include: path.resolve(__dirname, 'src'),
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[ext]',
+      //         outputPath: 'images/',
+      //         publicPath: 'images/'
+      //       }
+      //     }
+      //   ]
+      // },      
+      {
+        test: /\.(png|jpg|gif)$/i,
+        type: 'asset/resource'
+      },
       
     ],
   },

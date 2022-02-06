@@ -22,6 +22,7 @@ h1{
     /* font-family: 'Roboto Mono', monospace; */
     /* font-family: 'Rowdies', cursive; */
     /* font-family: 'Rubik Mono One', sans-serif; */
+    /* font-family: 'Teko', sans-serif; */
 }
 
 
@@ -120,14 +121,23 @@ header #intro a:focus{
     );
 }
 
+@screen 4xl{
+    #header-secondary{
+        height:65vh;
+        @apply px-40;
+    }
+}
+
 #header-secondary #intro{
     background:#6b6e7457;
+    /* background: #003c56; */
     backdrop-filter:blur(15px);
     @apply relative;
 }
 
 #header-secondary #intro a{
     @apply w-32 aspect-square rounded-full flex justify-center items-center overflow-hidden;
+    background: #003c56;
 }
 
 #header-secondary #intro a:after{
@@ -140,6 +150,7 @@ header #intro a:focus{
 }
 #header-secondary #intro a:hover{
     color:transparent;
+    background: white;
     box-shadow: 7px 7px 0 #f44336bf;
 }
 #header-secondary #intro a:hover:after{
@@ -153,6 +164,17 @@ header #intro a:focus{
     @apply w-2/3 aspect-square z-0 rounded-full absolute -left-40;
     background:linear-gradient(90deg, rgba(251,64,44,0.85) 0%, rgba(252,88,70,0.85) 27%), url(../img/bg/wesley-tingey--Irs24DzLxM-unsplash.jpg);
     filter:brightness(0.90) contrast(1.25);
+}
+
+.typo-element{
+    @apply absolute -left-32 h-full;
+    color: #003c56;
+    font-size: 45rem;
+    mix-blend-mode: darken;
+    opacity: 0.75;
+    font-family: 'Teko', sans-serif;
+    bottom: 4rem;
+    letter-spacing: -4rem;
 }
 
 .onglet{

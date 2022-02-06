@@ -49,7 +49,16 @@ module.exports = {
     extend: {
       zIndex: {
         '1': '1',
+      },
+      screens: {
+        '3xl': '1600px',
+        '4xl': '1800px'
+      },
+
+      spacing: {
+        '65vh':'65vh',
       }
+
     },
 
     variants: {

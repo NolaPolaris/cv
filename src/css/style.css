@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-wrap:anywhere;
 }
 
 header{
@@ -89,7 +90,7 @@ a{
 #portrait{}
 #portrait:hover{}
 
-#intro {
+header #intro {
     @apply relative;
     background: #d5edf65e;
     backdrop-filter: blur(15px)
@@ -101,17 +102,58 @@ a{
     box-shadow: 5px 5px 0 black;
 }
 
-#intro a:hover{
+header #intro a:hover{
     box-shadow: 7px 7px 0 #217aff;
     transition: 0.3s;
 }
 
-#intro a:focus{
+header #intro a:focus{
     box-shadow: 2px 2px 0 #0044aa;
     transition: 0.1s;
 }
 
+#header-secondary{
+    /* background: radial-gradient(circle, rgba(252,88,70,1) 47%, rgba(240,240,240,1) 50%); */
+    /* @apply bg-grey-300; */
+    @apply h-screen;
+    background:linear-gradient(90deg, rgba(240,240,240,0.85) 30%, rgba(240,240,240,0.85) 30%), url(../img/bg/wesley-tingey--Irs24DzLxM-unsplash.jpg
+    );
+}
 
+#header-secondary #intro{
+    background:#6b6e7457;
+    backdrop-filter:blur(15px);
+    @apply relative;
+}
+
+#header-secondary #intro a{
+    @apply w-32 aspect-square rounded-full flex justify-center items-center overflow-hidden;
+}
+
+#header-secondary #intro a:after{
+    content:"";
+    background:url(../img/icon/arrow-down.svg) center no-repeat;
+    background-size:2rem;
+    background-size:contain;
+    @apply w-full h-full absolute -top-40;
+    transform:rotate(315deg);
+}
+#header-secondary #intro a:hover{
+    color:transparent;
+    box-shadow: 7px 7px 0 #f44336bf;
+}
+#header-secondary #intro a:hover:after{
+    content:"";
+    background-size:2rem;
+    @apply top-0;
+    transition:0.1s ease-in;
+}
+
+.red-element{
+    @apply w-2/3 aspect-square z-0 rounded-full absolute -left-40;
+    background:linear-gradient(90deg, rgba(251,64,44,0.85) 0%, rgba(252,88,70,0.85) 27%), url(../img/bg/wesley-tingey--Irs24DzLxM-unsplash.jpg);
+    filter:brightness(0.90) contrast(1.25);
+}
 
 .onglet{
     @apply p-6 md:px-6 py-8 border-2 border-solid border-black border-b-0 relative;

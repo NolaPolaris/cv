@@ -56,6 +56,7 @@ module.exports = {
       },
 
       spacing: {
+        '45p':'45%',
         '65vh':'65vh',
       }
 

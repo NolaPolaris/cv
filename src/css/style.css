@@ -116,24 +116,58 @@ header #intro a:focus{
 #header-secondary{
     /* background: radial-gradient(circle, rgba(252,88,70,1) 47%, rgba(240,240,240,1) 50%); */
     /* @apply bg-grey-300; */
-    @apply h-screen;
+    @apply h-screen px-40;
     /* background:linear-gradient(90deg, rgba(240,240,240,0.85) 30%, rgba(240,240,240,0.85) 30%), url(../img/bg/wesley-tingey--Irs24DzLxM-unsplash.jpg
     ); */
-    background:linear-gradient(90deg, rgba(240,240,240,0.85) 30%, rgba(240,240,240,0.85) 30%);
+    /* background:linear-gradient(90deg, rgba(240,240,240,0.85) 30%, rgba(240,240,240,0.85) 30%), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAACFJREFUKFNjzL7w/z8DEYARpHCqASMjIbWjCvGGENHBAwCKoidEYok1UwAAAABJRU5ErkJggg==) repeat; */
+
+    /* damier */
+
+    /* background-color: #f2f2f2;
+    opacity: 0.8;
+    background-image:  repeating-linear-gradient(45deg, #e3edf2 25%, transparent 25%, transparent 75%, #e3edf2 75%, #e3edf2), repeating-linear-gradient(45deg, #e3edf2 25%, #f2f2f2 25%, #f2f2f2 75%, #e3edf2 75%, #e3edf2);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px; */
+
+    /* cross */
+
+    /* background-color: #f2f2f2;
+    opacity: 0.8;
+    background: radial-gradient(circle, transparent 20%, #f2f2f2 20%, #f2f2f2 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f2f2f2 20%, #f2f2f2 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#e3edf2 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #e3edf2 2px, #f2f2f2 2px) -1px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px; */
+
+    /* isometric */
+/* 
+    background-color: #f2f2f2;
+    background-image:  linear-gradient(30deg, #e3edf2 12%, transparent 12.5%, transparent 87%, #e3edf2 87.5%, #e3edf2), linear-gradient(150deg, #e3edf2 12%, transparent 12.5%, transparent 87%, #e3edf2 87.5%, #e3edf2), linear-gradient(30deg, #e3edf2 12%, transparent 12.5%, transparent 87%, #e3edf2 87.5%, #e3edf2), linear-gradient(150deg, #e3edf2 12%, transparent 12.5%, transparent 87%, #e3edf2 87.5%, #e3edf2), linear-gradient(60deg, #e3edf277 25%, transparent 25.5%, transparent 75%, #e3edf277 75%, #e3edf277), linear-gradient(60deg, #e3edf277 25%, transparent 25.5%, transparent 75%, #e3edf277 75%, #e3edf277);
+    background-size: 20px 35px;
+    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px; */
+
+    /* iso-fluo */
+
+    background-color: #f1f1fa;
+opacity: 0.8;
+background-image:  linear-gradient(#feffe8 1.6px, transparent 1.6px), linear-gradient(90deg, #feffe8 1.6px, transparent 1.6px), linear-gradient(#feffe8 0.8px, transparent 0.8px), linear-gradient(90deg, #feffe8 0.8px, #f1f1fa 0.8px);
+background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
+
+
 }
 
 @screen 4xl{
     #header-secondary{
         height:65vh;
-        @apply px-40;
     }
 }
 
 #header-secondary #intro{
-    background:#6b6e7457;
-    /* background: #003c56; */
+    /* background:#6b6e7457; */
+    /* background: #2a3436; */
+    background: #2a3436c4;
     backdrop-filter:blur(15px);
-    @apply relative;
+    @apply relative rounded py-12 px-16;
+    color:#ffffef;
+    box-shadow : inset -3px -2px 50px 5px #0000001a;
 }
 
 #header-secondary #intro a{

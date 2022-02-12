@@ -93,6 +93,10 @@ a{
     @apply relative;
 }
 
+section{
+    @apply overflow-hidden;
+}
+
 #portrait{}
 #portrait:hover{}
 
@@ -250,7 +254,11 @@ header #intro a:focus{
 }
 #experiences-secondary {
     background:linear-gradient(90deg, rgb(42 52 54) 42%, rgba(240,240,240,0.85) 38%);
-    @apply lg:pb-12 3xl:pb-40;
+    @apply lg:py-8 h-screen;
+}
+
+#experiences-secondary > div{
+    @apply h-screen;
 }
 #experiences-secondary .onglet{
     @apply px-8 py-10 relative;
@@ -342,7 +350,7 @@ header #intro a:focus{
 
 
 #skills{
-    @apply relative;
+    @apply relative h-screen pt-8 pb-20 xl:pt-20 xl:pb-48;
 }
 .card{
     /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black; */
@@ -388,7 +396,7 @@ header #intro a:focus{
 
 .card:hover .circle-element:after,
 .card:hover .circle-element:before{
-    @apply opacity-50 mix-blend-soft-light;
+    @apply opacity-50 mix-blend-soft-light w-full;
     transition:0.3s ease-in;
     filter: blur(0);
 }
@@ -414,17 +422,6 @@ header #intro a:focus{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 #skills .card:nth-child(1){
     /* @apply mt-0 rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary; */
 }
@@ -434,9 +431,9 @@ header #intro a:focus{
 }
 
 #skills .card:nth-child(3){
-    @apply mt-8;
+    /* @apply mt-8; */
 }
 
 #skills .card:nth-child(4){
-    @apply mt-0;
+    /* @apply mt-0; */
 }

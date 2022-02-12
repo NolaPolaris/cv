@@ -342,32 +342,95 @@ header #intro a:focus{
 
 
 #skills{
-    @apply bg-primary-light-medium relative;
+    @apply relative;
 }
 .card{
     /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black; */
-    @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black relative ;
+    /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black relative ; */
+    @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 relative ;
+}
+
+.card h3{
+    @apply font-title text-3xl text-primary pt-12;
+    letter-spacing: 1.5rem;
+}
+
+.card ul{
+    @apply pt-16;
+}
+.card li{
+    @apply font-body text-primary;
 }
 
 .circle-element{
-    @apply w-64 aspect-square rounded-full bg-secondary bg-opacity-50 opacity-0 absolute top-0;
+    @apply w-88 aspect-square rounded-full bg-secondary bg-opacity-0 opacity-100 absolute;
+
 }
 
-.card:hover .circle-element{
-    @apply opacity-100 mix-blend-color;
-    transition:0.7s ease-in;
+.circle-element:after,
+.circle-element:before{
+    content: "";
+    @apply w-full aspect-square rounded-full opacity-25 absolute -top-6;
 }
 
-#skills .card:nth-child(even){
-    @apply mt-8 ;
+.circle-element:after{
+    background-color: #a9c4c5;
+    @apply -left-20 mix-blend-color;
+    filter: blur(25px);
+    
 }
+
+.circle-element:before{
+    background-color: #e5ff00;
+    @apply -right-20 mix-blend-color;
+    filter: blur(25px);
+}
+
+.card:hover .circle-element:after,
+.card:hover .circle-element:before{
+    @apply opacity-50 mix-blend-soft-light;
+    transition:0.3s ease-in;
+    filter: blur(0);
+}
+
+.card:hover .circle-element:after{
+    @apply left-0 bg-transparent;
+}
+.card:hover .circle-element:before{
+    @apply right-0;
+}
+
+.card:hover h3{
+    letter-spacing:1rem;
+    @apply text-black transitioning;
+}
+
+.card:hover ul{
+    @apply pt-8 transitioning;
+}
+
+.card:hover li{
+    @apply text-black transitioning;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 #skills .card:nth-child(1){
-    @apply mt-0 rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary;
+    /* @apply mt-0 rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary; */
 }
 
 #skills .card:nth-child(2){
-    @apply relative rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary mt-20;
+    /* @apply relative rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary mt-20; */
 }
 
 #skills .card:nth-child(3){
@@ -377,6 +440,3 @@ header #intro a:focus{
 #skills .card:nth-child(4){
     @apply mt-0;
 }
-
-.card:hover{}
-

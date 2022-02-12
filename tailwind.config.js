@@ -67,6 +67,8 @@ module.exports = {
       spacing: {
         '45p':'45%',
         '65vh':'65vh',
+        '80':'20rem',
+        '88':'22rem',
         '120':'30rem',
       },
       opacity: {

@@ -1,0 +1,59 @@
+@layer components{
+    .btn{
+        @apply border-solid border border-2 relative;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .btn:hover {
+        @apply outline-none;
+    }
+
+    .btn:hover {
+        @apply cursor-pointer;
+    }
+
+    .btn:before {
+        content: "";
+        background-color: #D5EDF6;
+        height: calc(100% + 3px);
+        position: absolute;
+        right: -7px;
+        top: -9px;
+        transition: background-color 300ms ease-in;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .btn:hover:before {
+        
+    }
+
+    .btn-secondary{
+        @apply border border-2 border-black px-4 py-3 
+        absolute right-8 -bottom-16 w-32 aspect-square rounded-full 
+        flex justify-center items-center overflow-hidden 
+        text-primary-light font-bold bg-primary contrast-150;
+    }
+    
+    .btn-secondary:after{
+        content:"";
+        background:url(../img/icon/arrow-down.svg) center no-repeat;
+        background-size:2rem;
+        background-size:contain;
+        @apply w-full h-full absolute -top-40;
+        transform:rotate(315deg);
+    }
+    .btn-secondary:hover{
+        @apply text-transparent bg-white shadow-secondary shadow-hover;
+
+    }
+    .btn-secondary:hover:after{
+        content:"";
+        background-size:2rem;
+        @apply top-0;
+        transition:0.1s ease-in;
+    }
+}

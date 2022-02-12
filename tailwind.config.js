@@ -39,16 +39,25 @@ module.exports = {
         '500': '#EAB308',
         '900': '#713F12',
       },
+      primary:{
+        DEFAULT: '#2a3436',
+        'medium':'#00354b',
+        'light-medium':'#87a5ad',
+        'light':'#f0f0f0',
+      },
+      secondary:{
+        DEFAULT: '#eeff00',
+      }
 
     },
     fontFamily: {
       title: ['Rubik Mono One', 'sans-serif'],
       body: ['Roboto Mono', 'monospace']
     },
-
     extend: {
       zIndex: {
         '1': '1',
+        '-1': '-1',
       },
       screens: {
         '3xl': '1600px',
@@ -59,6 +68,18 @@ module.exports = {
         '45p':'45%',
         '65vh':'65vh',
         '120':'30rem',
+      },
+      opacity: {
+          '85': '.85',
+      },
+
+      boxShadow: {
+        DEFAULT: '5px 5px 0 rgba(0, 0, 0, 1)',
+        'hover':'7px 7px 0 0',
+        'inset':'inset -3px -2px 50px 5px #0000001a',
+      },
+      backdropBlur: {
+        xxl: '90px',
       }
 
     },
@@ -82,7 +103,8 @@ module.exports = {
                   top: '50%',
                   left: '50%',
                   transform: 'translate(-50%, -50%)'
-              }
+              },
+
           }
           addComponents(components)
       })

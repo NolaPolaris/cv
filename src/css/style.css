@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "fonts.css";
+@import "components.css";
+
+@layer utilities {
+    .transitioning {
+      transition:0.3s ease-in;
+    }
+  }
 
 
 html {
@@ -62,13 +69,11 @@ button, .btn{
     @apply outline-none;
 }
 
-.button:hover,
-.btn:hover {
+.button:hover {
     @apply cursor-pointer;
 }
 
-.button:before,
-.btn:before {
+.button:before {
   content: "";
   background-color: #D5EDF6;
   height: calc(100% + 3px);
@@ -98,8 +103,7 @@ header #intro {
 }
 
 
-#intro a {
-    @apply border border-2 border-black px-4 py-3 absolute right-8 bg-white font-bold;
+#intro btn {
     box-shadow: 5px 5px 0 black;
 }
 
@@ -146,12 +150,7 @@ header #intro a:focus{
     /* iso-fluo */
 
     background-color: #f1f1fa;
-opacity: 0.8;
-background-image:  linear-gradient(#feffe8 1.6px, transparent 1.6px), linear-gradient(90deg, #feffe8 1.6px, transparent 1.6px), linear-gradient(#feffe8 0.8px, transparent 0.8px), linear-gradient(90deg, #feffe8 0.8px, #f1f1fa 0.8px);
-background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
-background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
-
-
+    opacity: 0.8;
 }
 
 @screen 4xl{
@@ -163,37 +162,11 @@ background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
 #header-secondary #intro{
     /* background:#6b6e7457; */
     /* background: #2a3436; */
-    background: #2a3436c4;
-    backdrop-filter:blur(15px);
-    @apply relative rounded py-12 px-16;
-    color:#ffffef;
-    box-shadow : inset -3px -2px 50px 5px #0000001a;
+    /* background: #2a3436c4; */
+    @apply relative rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary;
 }
 
-#header-secondary #intro a{
-    @apply w-32 aspect-square rounded-full flex justify-center items-center overflow-hidden text-white -bottom-16;
-    background: #003c56;
-}
 
-#header-secondary #intro a:after{
-    content:"";
-    background:url(../img/icon/arrow-down.svg) center no-repeat;
-    background-size:2rem;
-    background-size:contain;
-    @apply w-full h-full absolute -top-40;
-    transform:rotate(315deg);
-}
-#header-secondary #intro a:hover{
-    color:transparent;
-    background: white;
-    box-shadow: 7px 7px 0 #f44336bf;
-}
-#header-secondary #intro a:hover:after{
-    content:"";
-    background-size:2rem;
-    @apply top-0;
-    transition:0.1s ease-in;
-}
 
 /* .red-element{
     @apply w-2/3 aspect-square z-0 rounded-full absolute -left-40;
@@ -203,12 +176,15 @@ background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
 
 .yellow-element{
     @apply w-1/3 aspect-square z-0 rounded-full absolute -left-48;
-    background: rgb(70,252,232);
+    background-image:  linear-gradient(#feffe8 1.6px, transparent 1.6px), linear-gradient(90deg, #feffe8 1.6px, transparent 1.6px), linear-gradient(#feffe8 0.8px, transparent 0.8px), linear-gradient(90deg, #feffe8 0.8px, #f1f1fa 0.8px);
+    background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+    background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
+    /* background: rgb(70,252,232);
     background: -moz-radial-gradient(circle, rgba(70,252,232,0) 0%, rgba(232,251,44,0) 0, rgba(232,251,44,0.65) 75%);
     background: -webkit-radial-gradient(circle, rgba(70,252,232,0) 0%, rgba(232,251,44,0) 0, rgba(232,251,44,0.65) 75%);
     background: radial-gradient(circle, rgba(70,252,232,0) 0%, rgba(232,251,44,0) 0, rgba(232,251,44,0.65) 75%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46fce8",endColorstr="#e8fb2c",GradientType=1);
-    filter:brightness(0.90) contrast(1.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46fce8",endColorstr="#e8fb2c",GradientType=1); */
+    /* filter:brightness(0.90) contrast(1.25); */
 }
 
 .pink-element{
@@ -274,7 +250,7 @@ background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
 }
 #experiences-secondary {
     background:linear-gradient(90deg, rgb(42 52 54) 42%, rgba(240,240,240,0.85) 38%);
-    @apply pb-40;
+    @apply lg:pb-12 3xl:pb-40;
 }
 #experiences-secondary .onglet{
     @apply px-8 py-10 relative;
@@ -298,7 +274,7 @@ background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
 }
 
 #experiences-secondary .onglet:nth-child(1){
-    @apply ml-24 mt-24;
+    @apply ml-24 mt-10;
 }
 
 #experiences-secondary .onglet:nth-child(2){
@@ -324,8 +300,8 @@ background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
 }
 
 .line-element{
-    @apply absolute h-120 w-16 left-0;
-    background-color: rgba(238, 255, 0, 0.842);
+    @apply absolute h-120 w-16 left-0 bg-secondary opacity-85;
+    background-color: rgba(238, 255, 0, 0.85);
     mix-blend-mode: screen;
     top: 50%;
     transform: translateY(-50%);
@@ -365,9 +341,41 @@ background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
 }
 
 
-
+#skills{
+    @apply bg-primary-light-medium relative;
+}
 .card{
-    @apply w-full h-screen md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black;
+    /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black; */
+    @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black relative ;
+}
+
+.circle-element{
+    @apply w-64 aspect-square rounded-full bg-secondary bg-opacity-50 opacity-0 absolute top-0;
+}
+
+.card:hover .circle-element{
+    @apply opacity-100 mix-blend-color;
+    transition:0.7s ease-in;
+}
+
+#skills .card:nth-child(even){
+    @apply mt-8 ;
+}
+
+#skills .card:nth-child(1){
+    @apply mt-0 rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary;
+}
+
+#skills .card:nth-child(2){
+    @apply relative rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary mt-20;
+}
+
+#skills .card:nth-child(3){
+    @apply mt-8;
+}
+
+#skills .card:nth-child(4){
+    @apply mt-0;
 }
 
 .card:hover{}

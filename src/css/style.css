@@ -303,9 +303,61 @@ header #intro a:focus{
 }
 
 #experiences-secondary .onglet-content{
-    @apply p-4 md:pl-24 md:py-20;
+    @apply p-4 md:pl-24 md:py-20 hidden h-screen;
     /* border-left:solid 4rem rgba(238, 255, 0, 0.842); */
+    transform:translateX(100vw);
 }
+
+#experiences-secondary .onglet-content.active{
+    @apply flex flex-col justify-center items-start transform-none;
+    transition:0.75s ease-in;
+
+}
+
+/* #experiences-secondary .onglet-content:nth-child(even){
+    transform:translateX(100vw);
+    
+}
+
+#experiences-secondary .onglet-content:nth-child(even).active{
+    @apply transform-none;
+}
+
+#experiences-secondary .onglet-content:nth-child(odd){
+    transform:translateY(-100vh);
+}
+
+#experiences-secondary .onglet-content:nth-child(odd).active{
+    transform:translateY(0vh);
+
+} */
+
+@keyframe slideX{
+    from {
+        transform:translateX(100vw);
+      }
+    
+      to {
+        transform:translateX(0vw);
+      }
+
+}
+
+@keyframe slideY{
+    from {
+        transform:translateY(100vh);
+      }
+    
+      to {
+        transform:translateY(0vh);
+      }
+
+}
+
+
+
+
+
 
 .line-element{
     @apply absolute h-120 w-16 left-0 bg-secondary opacity-85;

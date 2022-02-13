@@ -402,12 +402,24 @@ header #intro a:focus{
 
 
 #skills{
-    @apply relative h-screen pt-8 pb-20 xl:pt-20 xl:pb-48;
+    @apply relative h-screen pt-8 pb-20 lg:px-12 3xl:px-20  xl:pt-20 xl:pb-48 border-solid border-20 border-primary-medium;
+    background: #f0f0f0d9;
 }
+
+#skills h2{
+    @apply text-4xl relative w-fit;
+}
+
+#skills h2:after{
+    content: "";
+    @apply absolute left-0 -bottom-4 w-full h-12 bg-secondary mix-blend-color-burn;
+
+}
+
 .card{
     /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black; */
     /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black relative ; */
-    @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 relative ;
+    @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 relative z-1;
 }
 
 .card h3{
@@ -441,7 +453,9 @@ header #intro a:focus{
 }
 
 .circle-element:before{
-    background-color: #e5ff00;
+    /* background-color: #e5ff00; */
+    background-color: #ffd0f0;
+    
     @apply -right-20 mix-blend-color;
     filter: blur(25px);
 }
@@ -458,6 +472,7 @@ header #intro a:focus{
 }
 .card:hover .circle-element:before{
     @apply right-0;
+    background: #e5ff00;
 }
 
 .card:hover h3{
@@ -480,12 +495,68 @@ header #intro a:focus{
 
 #skills .card:nth-child(2){
     /* @apply relative rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary mt-20; */
+    transform: translateY(20rem);
 }
 
 #skills .card:nth-child(3){
     /* @apply mt-8; */
+    transform: translate(-3rem -6rem);
 }
 
 #skills .card:nth-child(4){
     /* @apply mt-0; */
+    transform: translate(-1rem, 16rem);
 }
+
+#skills .right-blob {
+    @apply absolute aspect-square;
+    background: url(../img/blob-blue.svg) no-repeat right top;
+    background-size: cover;
+   
+    width: 102rem;
+    filter: drop-shadow(10px 30px 0px lightblue);
+    filter: contrast(0.5) opacity(0.1) hue-rotate(315deg) drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.096));
+    transform: rotate(45deg);
+    z-index: 0;
+}
+#skills .right-blob.first{
+    right: -50rem;
+    left: auto;
+    top: -55rem;
+}
+#skills .right-blob.second{
+    right: -52rem;
+    left: auto;
+    top: -57rem;
+}
+#skills .right-blob.thirst{
+    right: -54rem;
+    left: auto;
+    top: -59rem;
+}
+
+#skills .left-blob {
+    @apply absolute aspect-square;
+    background: url(../img/blob-yellow.svg) no-repeat left bottom;
+    background-size: cover;
+    z-index: 0;
+    position: absolute;
+  
+    width: 50rem;
+    transform: rotate(90deg) scaleY(1.5);
+    filter: saturate(0.15) opacity(0.5) hue-rotate(46deg) contrast(0.5) drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.096));
+}
+
+#skills .left-blob.first{
+    left: -20rem;
+    bottom: -30rem;
+}
+#skills .left-blob.second{
+    left: -22rem;
+    bottom: -32rem;
+}
+#skills .left-blob.thirst{
+    left: -24rem;
+    bottom: -34rem;
+}
+

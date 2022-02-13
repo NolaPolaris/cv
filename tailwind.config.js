@@ -70,8 +70,14 @@ module.exports = {
         '80':'20rem',
         '88':'22rem',
         '120':'30rem',
+        '140':'35rem',
         '160':'40rem',
       },
+
+      borderWidth: {
+        '20': '20px',
+      },
+
       opacity: {
           '85': '.85',
       },

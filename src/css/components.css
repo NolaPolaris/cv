@@ -56,4 +56,12 @@
         @apply top-0;
         transition:0.1s ease-in;
     }
+
+    .w-fit{
+        width:fit-content;
+    }
+
+    .h-fit{
+        height:fit-content;
+    }
 }

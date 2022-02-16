@@ -21,7 +21,7 @@ header{
 }
 
 h1{
-    @apply text-5xl font-title;
+    @apply relative text-3xl md:text-5xl font-title;
     /* font-family: 'Catamaran', sans-serif; */
     /* font-family: 'Coustard', serif; */
     /* font-family: 'IBM Plex Sans Thai Looped', sans-serif; */
@@ -38,7 +38,7 @@ h2, h4{
 }
 
 h2{
-    @apply text-3xl mb-8;
+    @apply text-xl md:text-3xl my-6 md:mt-0 md:mb-8;
 }
 
 h3 {
@@ -124,7 +124,10 @@ header #intro a:focus{
 #header-secondary{
     /* background: radial-gradient(circle, rgba(252,88,70,1) 47%, rgba(240,240,240,1) 50%); */
     /* @apply bg-grey-300; */
-    @apply h-screen px-40;
+    @apply relative overflow-hidden flex flex-col px-4 py-8 
+    md:flex-row items-center md:justify-between 
+    md:h-screen md:px-12 md:py-20
+    xl:px-40;
     /* background:linear-gradient(90deg, rgba(240,240,240,0.85) 30%, rgba(240,240,240,0.85) 30%), url(../img/bg/wesley-tingey--Irs24DzLxM-unsplash.jpg
     ); */
     /* background:linear-gradient(90deg, rgba(240,240,240,0.85) 30%, rgba(240,240,240,0.85) 30%), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAACFJREFUKFNjzL7w/z8DEYARpHCqASMjIbWjCvGGENHBAwCKoidEYok1UwAAAABJRU5ErkJggg==) repeat; */
@@ -161,16 +164,25 @@ header #intro a:focus{
     #header-secondary{
         height:65vh;
     }
+
+
+}
+
+#header-secondary h1:after{
+    content: "";
+    @apply absolute -left-20 -bottom-4 w-screen h-32 bg-secondary mix-blend-color-burn md:hidden;
 }
 
 #header-secondary #intro{
     /* background:#6b6e7457; */
     /* background: #2a3436; */
     /* background: #2a3436c4; */
-    @apply relative rounded py-12 px-16 bg-primary-light bg-opacity-25 backdrop-blur-xxl shadow-inset text-primary;
+    @apply relative rounded p-6 text-primary z-1 w-full md:py-12 md:px-16
+        bg-primary-light bg-opacity-25
+        md:backdrop-blur-xxl md:shadow-inset 
+        md:w-1/2 md:ml-auto md:mr-0 
+        md:border-2 md:border-black md:border-solid;
 }
-
-
 
 /* .red-element{
     @apply w-2/3 aspect-square z-0 rounded-full absolute -left-40;
@@ -202,8 +214,6 @@ header #intro a:focus{
     mix-blend-mode:difference;
 }
 
-
-
 .typo-element{
     @apply absolute -left-32 -bottom-32 h-full;    /* letter-spacing: -4rem; */
 }
@@ -220,6 +230,10 @@ header #intro a:focus{
     font-family: 'Russo One', sans-serif;
     /* font-family: 'Shizuru', cursive; */
    
+}
+
+#header-secondary  .btn-secondary {
+    @apply mx-auto mt-6 md:m-0 md:absolute md:right-8 md:-bottom-16;
 }
 
 #experiences{
@@ -252,67 +266,75 @@ header #intro a:focus{
 #experiences .onglet-content{
     @apply p-4 md:pl-24 md:py-20;
 }
-#experiences-secondary {
-    background:linear-gradient(90deg, rgb(42 52 54) 42%, rgba(240,240,240,0.85) 38%);
-    @apply lg:py-8 h-screen;
+
+
+@screen lg {
+    #experiences-secondary .onglet-content-xs{
+        @apply hidden;
+    }
+    #experiences-secondary .onglet-content{
+        @apply hidden p-4 md:pl-24 md:py-20 h-screen;
+        /* border-left:solid 4rem rgba(238, 255, 0, 0.842); */
+        transform:translateX(100vw);
+    }
+    
+    #experiences-secondary .onglet-content.active{
+        @apply flex flex-col justify-center items-start transform-none;
+        transition:0.75s ease-in;
+    }
+
+    #experiences-secondary {
+        background:linear-gradient(90deg, rgb(42 52 54) 42%, rgba(240,240,240,0.85) 38%);
+        @apply lg:py-8 h-screen;
+    }
+    
+    #experiences-secondary > div{
+        @apply h-screen;
+    }
+    #experiences-secondary .onglet{
+        @apply px-8 py-10 relative;
+        background: rgba(12, 54, 56,0.65);
+        backdrop-filter:blur(50px);
+        border-radius:5px;
+        mix-blend-mode:exclusion;
+        color:#c8c8c8;
+        width:fit-content;
+    }
+    
+    #experiences-secondary .onglet:hover{
+        @apply bg-grey-50 text-black;
+        transform:translate(5%, 5%);
+        transition:0.2s ease-in-out;
+        mix-blend-mode:luminosity;
+        backdrop-filter:blur(10px);
+        z-index:10;
+        border:solid black 1px;
+        /* box-shadow: -10px 10px 1px 0px rgba(247, 255, 127, 1); */
+    }
+    
+    #experiences-secondary .onglet:nth-child(1){
+        @apply ml-24 mt-10;
+    }
+    
+    #experiences-secondary .onglet:nth-child(2){
+        margin-left: 15rem;
+        margin-top: -2rem;
+    }
+    
+    #experiences-secondary .onglet:nth-child(3){
+        @apply ml-12 -mt-4;
+    }
+    
+    #experiences-secondary .onglet:nth-child(4){
+        @apply ml-32 -mt-4;
+    }
+    
+    #experiences-secondary .onglet:nth-child(5){
+        @apply ml-4 -mt-4;
+    }
 }
 
-#experiences-secondary > div{
-    @apply h-screen;
-}
-#experiences-secondary .onglet{
-    @apply px-8 py-10 relative;
-    background: rgba(12, 54, 56,0.65);
-    backdrop-filter:blur(50px);
-    border-radius:5px;
-    mix-blend-mode:exclusion;
-    color:#c8c8c8;
-    width:fit-content;
-}
 
-#experiences-secondary .onglet:hover{
-    @apply bg-grey-50 text-black;
-    transform:translate(5%, 5%);
-    transition:0.2s ease-in-out;
-    mix-blend-mode:luminosity;
-    backdrop-filter:blur(10px);
-    z-index:10;
-    border:solid black 1px;
-    /* box-shadow: -10px 10px 1px 0px rgba(247, 255, 127, 1); */
-}
-
-#experiences-secondary .onglet:nth-child(1){
-    @apply ml-24 mt-10;
-}
-
-#experiences-secondary .onglet:nth-child(2){
-    margin-left: 15rem;
-    margin-top: -2rem;
-}
-
-#experiences-secondary .onglet:nth-child(3){
-    @apply ml-12 -mt-4;
-}
-
-#experiences-secondary .onglet:nth-child(4){
-    @apply ml-32 -mt-4;
-}
-
-#experiences-secondary .onglet:nth-child(5){
-    @apply ml-4 -mt-4;
-}
-
-#experiences-secondary .onglet-content{
-    @apply p-4 md:pl-24 md:py-20 hidden h-screen;
-    /* border-left:solid 4rem rgba(238, 255, 0, 0.842); */
-    transform:translateX(100vw);
-}
-
-#experiences-secondary .onglet-content.active{
-    @apply flex flex-col justify-center items-start transform-none;
-    transition:0.75s ease-in;
-
-}
 
 /* #experiences-secondary .onglet-content:nth-child(even){
     transform:translateX(100vw);
@@ -353,11 +375,6 @@ header #intro a:focus{
       }
 
 }
-
-
-
-
-
 
 .line-element{
     @apply absolute h-120 w-16 left-0 bg-secondary opacity-85;
@@ -413,17 +430,18 @@ header #intro a:focus{
 #skills h2:after{
     content: "";
     @apply absolute left-0 -bottom-4 w-full h-12 bg-secondary mix-blend-color-burn;
-
 }
+
+
 
 .card{
     /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/4 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black; */
     /* @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 border-2 border-solid border-black relative ; */
-    @apply w-full h-screen md:h-auto md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start p-6 md:py-8 relative z-1;
+    @apply w-full h-screen xl:h-fit md:w-1/2 xl:w-1/5 flex flex-col items-center justify-start relative z-1;
 }
 
 .card h3{
-    @apply font-title text-3xl text-primary pt-12;
+    @apply font-title text-3xl text-primary pt-12 pl-6 text-center;
     letter-spacing: 1.5rem;
 }
 
@@ -435,7 +453,7 @@ header #intro a:focus{
 }
 
 .circle-element{
-    @apply w-88 aspect-square rounded-full bg-secondary bg-opacity-0 opacity-100 absolute;
+    @apply w-72 3xl:w-88 aspect-square rounded-full bg-secondary bg-opacity-0 opacity-100 absolute;
 
 }
 
@@ -477,7 +495,7 @@ header #intro a:focus{
 
 .card:hover h3{
     letter-spacing:1rem;
-    @apply text-black transitioning;
+    @apply text-black pl-4 transitioning;
 }
 
 .card:hover ul{

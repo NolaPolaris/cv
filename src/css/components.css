@@ -1,3 +1,4 @@
+
 @layer components{
     .btn{
         @apply border-solid border border-2 relative;
@@ -33,7 +34,7 @@
 
     .btn-secondary{
         @apply border border-2 border-black px-4 py-3 
-        absolute right-8 -bottom-16 w-32 aspect-square rounded-full 
+        w-32 aspect-square rounded-full 
         flex justify-center items-center overflow-hidden 
         text-primary-light font-bold bg-primary contrast-150;
     }
@@ -65,3 +66,4 @@
         height:fit-content;
     }
 }
+

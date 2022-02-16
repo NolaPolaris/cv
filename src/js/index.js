@@ -16,17 +16,20 @@ $(document).ready(function(){
     } 
   });
   
+  if (window.innerWidth > 1024) {
+    $('.onglet').on('click', function (e) {
+      e.preventDefault();
+      $('.onglet').removeClass('active');
+      $(this).addClass('active');
+      let title = $(this).data('title');
+      let current = $('.onglet-content[data-content="' + title + '"]');
+      current.attr('id', title);
+      $('.onglet-content').removeClass('active');
+      current.removeClass('hidden');
+      current.addClass('active');
+    })
+    
+  }
   
-  $('.onglet').on('click', function (e) {
-    e.preventDefault();
-    $('.onglet').removeClass('active');
-    $(this).addClass('active');
-    let title = $(this).data('title');
-    let current = $('.onglet-content[data-content="' + title + '"]');
-    current.attr('id', title);
-    $('.onglet-content').removeClass('active');
-    current.removeClass('hidden');
-    current.addClass('active');
-  })
-  
+ 
 });

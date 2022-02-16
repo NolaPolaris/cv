@@ -308,7 +308,7 @@ header #intro a:focus{
         @apply h-screen;
     }
 
-    #experiences-secondary .onglet{
+    #experiences-secondary .onglet {
         @apply px-8 py-10 relative;
         background: rgba(12, 54, 56,0.65);
         backdrop-filter:blur(50px);
@@ -318,7 +318,8 @@ header #intro a:focus{
         width:fit-content;
     }
     
-    #experiences-secondary .onglet:hover{
+    #experiences-secondary .onglet:hover,
+    #experiences-secondary .onglet.active { 
         @apply bg-grey-50 text-black;
         transform:translate(5%, 5%);
         transition:0.2s ease-in-out;

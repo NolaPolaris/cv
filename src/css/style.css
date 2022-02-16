@@ -271,15 +271,17 @@ header #intro a:focus{
 
 
 #experiences-secondary .onglet{
-    @apply p-4 relative w-full text-primary-light;
-    background: rgba(12, 54, 56,0.65);
-    backdrop-filter:blur(50px);
-    mix-blend-mode:exclusion;
+    @apply p-4 relative w-full text-primary-light bg-primary transitioning;
+    
+}
 
+#experiences-secondary .onglet.active{
+    @apply bg-secondary text-primary;
+    transition:none;
 }
 
 #experiences-secondary .onglet-content-xs{
-    @apply px-4 py-12 bg-primary-light;
+    @apply hidden px-4 py-12 bg-primary-light text-black;
 }
 
 @screen md {

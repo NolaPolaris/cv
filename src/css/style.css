@@ -259,16 +259,30 @@ header #intro a:focus{
 } */
 
 
-#experiences .onglet:hover{
+/* #experiences .onglet:hover{
     @apply bg-grey-50 text-black;
 }
 
 #experiences .onglet-content{
     @apply p-4 md:pl-24 md:py-20;
+} */
+
+
+
+
+#experiences-secondary .onglet{
+    @apply p-4 relative w-full text-primary-light;
+    background: rgba(12, 54, 56,0.65);
+    backdrop-filter:blur(50px);
+    mix-blend-mode:exclusion;
+
 }
 
+#experiences-secondary .onglet-content-xs{
+    @apply px-4 py-12 bg-primary-light;
+}
 
-@screen lg {
+@screen md {
     #experiences-secondary .onglet-content-xs{
         @apply hidden;
     }
@@ -291,6 +305,7 @@ header #intro a:focus{
     #experiences-secondary > div{
         @apply h-screen;
     }
+
     #experiences-secondary .onglet{
         @apply px-8 py-10 relative;
         background: rgba(12, 54, 56,0.65);

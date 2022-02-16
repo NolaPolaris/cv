@@ -16,7 +16,7 @@ $(document).ready(function(){
     } 
   });
   
-  if (window.innerWidth > 1024) {
+  if (window.innerWidth >= 769) {
     $('.onglet').on('click', function (e) {
       e.preventDefault();
       $('.onglet').removeClass('active');

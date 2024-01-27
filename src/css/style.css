@@ -394,6 +394,7 @@ header #intro a:focus{
 
 }
 
+
 .line-element{
     @apply absolute h-120 w-16 left-0 bg-secondary opacity-85;
     background-color: rgba(238, 255, 0, 0.85);
@@ -577,7 +578,6 @@ header #intro a:focus{
     background-size: cover;
     z-index: 0;
     position: absolute;
-  
     width: 50rem;
     transform: rotate(90deg) scaleY(1.5);
     filter: saturate(0.15) opacity(0.5) hue-rotate(46deg) contrast(0.5) drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.096));
